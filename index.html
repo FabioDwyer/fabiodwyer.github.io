@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mood Soundtrack Generator</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Mogra&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
-    <div class="wrapper">
-        <header>
+    <header>
+        <div class="wrapper">
             <div class="logo"></div>
             <h1>Fabio Dwyer</h1>
             <h2>Mood Soundtrack Generator:</h2>
+        </div>
         </header>
 
-        <main>
+        <main class="wrapper">
             <h3>Instructions:</h3>
             <ol>
                 <li>Turn your speakers on. Loud!</li>
@@ -31,15 +34,14 @@
                 <button onclick="myFunction()" class="dropbtn">Soundtrack Generator</button>
                 <div id="myDropdown" class="dropdown-content">
                     <ul>
-                        <li onclick="songOne(true)" id="rock">Play Rock</li>
-                        <li onclick="songTwo(true)" id="latin">Play Latin</li>
-                        <li onclick="songThree(true)" id="blues">Play Blues</li>
+                        <li onclick="songOne(true)" id="rock">🚀 I'm starting my day, I need a kick in the butt!!</li>
+                        <li onclick="songTwo(true)" id="latin">💘 I'm in love, gimme some sexy latin sugar, baby!</li>
+                        <li onclick="songThree(true)" id="blues">😥 I feel like I'm lost in the desert. And my horse left me...</li>
                     </ul>
                 </div>
             </div>
-        </main>
-    </div>
-    <!-- End of wrapper -->
+        </main> <!-- End of wrapper -->
+
     <footer>
         <p>All music written and performed by Fabio Dwyer</p>
         <h6>&copy; Copyrights Reserved</h6>

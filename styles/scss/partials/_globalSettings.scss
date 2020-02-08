@@ -5,8 +5,8 @@ html {
 body {
     font-size: 1.6rem;
     font-family: Arial, Helvetica, sans-serif;
-    // color: $primaryFontColor;
-    background-color: white;
+    color: #233237;;
+    background-color: #eac67a; // Warm Yellow
     line-height: 1.6;
 }
 
@@ -91,16 +91,19 @@ button a:focus {
 
 /* Typographic Styles */
 h1 {
-    // font-family: $logoFont;
-    // color: $secondaryFontColor;
-    font-size: 6rem;
+    font-family: $logoPrimaryFont;
+    color: #984b43; // Rusty Red
+    font-size: 8rem;
+    line-height: 1.2;
 }
 
 h2 {
-    // font-family: $mainFont;
-    // color: $secondaryFontColor;
+    font-family: $logoSecondaryFont;
     font-size: 4rem;
+    color: #eac67a; // Warm Yellow
+    line-height: 1.2;
 }
+
 
 /* Navigation accessibility */
 // .skip-link {
@@ -119,17 +122,20 @@ h2 {
 //DROPDOWN MENU
 /* Dropdown Button */
 .dropbtn {
-    background-color: navy;
-    color: white;
+    width: 50rem;
+    background: #233237; // Gunmetal
+    color: #eac67a; // Warm Yellow
     padding: 16px;
-    font-size: 16px;
+    font-family: $logoSecondaryFont;
+    font-size: 2.5vw;
+    font-weight: bold;
     border: none;
-    cursor: pointer;
+    // cursor: pointer;
 }
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
+    background: #984b43; // Rusty Red
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -141,26 +147,36 @@ h2 {
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
+    // position: absolute;
+    background-color: #eac67a; 
+    min-width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
 /* Links inside the dropdown */
 .dropdown-content li {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+    color: #233237;;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
+.dropdown-content li:hover {
+    background-color: #ddd;
+    // cursor: pointer;
+
+}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
     display:block;
 }
 
+li:hover,
+li:focus,
+button:hover,
+button:focus {
+    cursor: pointer;
+}

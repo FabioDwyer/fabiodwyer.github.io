@@ -1,12 +1,10 @@
 main {
-    width: 50%;
     background-color: #fff;
-    margin: 3% auto;
-    border: 1px solid black;
+    margin: 5% auto;
     padding: 2%;
     text-align: center;
 }
 
-main ul li {
-    color: red;
-} // Temporary, just for testing
+main.wrapper {
+    width: 50%;
+}
