@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mood Soundtrack Generator</title>
+    <title>INDEX 2</title>
     <link href="https://fonts.googleapis.com/css?family=Mogra&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 </head>
-
 <body>
     <div class="wrapper">
         <header>
@@ -23,8 +21,7 @@
             <ol>
                 <li>Turn your speakers on. Loud!</li>
                 <li>Just click the button below.</li>
-                <li>Choose an option that better describes your current mood and I'll give you a good soundtrack for
-                    your moment.
+                <li>Choose an option that better describes your current mood and I'll give you a good soundtrack for your moment.
                 </li>
             </ol>
             <div class="dropdown">
@@ -48,17 +45,17 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
     <script>
-        // $(document).ready(function () {
-        //     console.log('ready');
+    // $(document).ready(function () {
+    //     console.log('ready');
 
-        // Dropdown Menu:
-        /* When the user clicks on the button,
-        toggle between hiding and showing the dropdown content */
+    // Dropdown Menu:
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
         function myFunction() {
             document.getElementById("myDropdown").classList.toggle("show");
         }
 
-        // Close the dropdown menu if the user clicks outside of it
+    // Close the dropdown menu if the user clicks outside of it
         window.onclick = function (event) {
             if (!event.target.matches('.dropbtn')) {
                 let dropdowns = document.getElementsByClassName("dropdown-content");
@@ -66,13 +63,13 @@
                 for (i = 0; i < dropdowns.length; i++) {
                     let openDropdown = dropdowns[i];
                     if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
+                    openDropdown.classList.remove('show');
                 }
             }
         }
+    }     
 
-        // Audio JS:
+    // Audio JS:
         function songOne(autoplay) {
             const playlist = document.createElement("AUDIO");
             playlist.setAttribute("id", "rock");
@@ -128,5 +125,6 @@
 
     // })
     </script>
+
 </body>
 </html>

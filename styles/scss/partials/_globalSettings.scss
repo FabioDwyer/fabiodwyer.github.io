@@ -34,8 +34,7 @@ p,
 ul,
 li,
 a,
-button,
-fieldset {
+button {
 	margin: 0;
 	padding: 0;
 }
@@ -45,7 +44,6 @@ ul {
 }
 
 li {
-    list-style: none;
     text-decoration: none;
 } 
 
@@ -60,52 +58,35 @@ a:visited {
     display: inline-block; 
 }
 
-// button a {
-//     padding: 20px 30px;
-// }
+button a {
+    padding: 20px 30px;
+}
 
-// button a:hover,
-// button a:focus {
-//     background-color: $secondaryFont;
-//     border-radius: 5px;
-//     // position: relative;
-//     transition: 1s;
-//     transform: scale(1.5);
-// }
-
-// a.link-text {
-//     color: ;
-//     font-size: 1.6rem;
-//     font-weight: bold;
-//     text-transform: none;
-// }
-
-// a.link-text:hover,
-// a.link-text:focus {
-//     color: ;
-//     font-size: 1.6rem;
-//     font-weight: bold;
-//     text-transform: none;
-//     display: inline-block;
-// }
+button a:hover,
+button a:focus {
+    // background-color: $secondaryFont;
+    border-radius: 5px;
+    transition: 1s;
+    transform: scale(1.5);
+}
 
 
 /* Button Styles */
-button {
-    border: none;
-    // background: $buttonColor;
-    background: rebeccapurple;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 15px 22px;
-    color: $accentColor;   
-}
+// button {
+//     border: none;
+//     // background: $buttonColor;
+//     background: rebeccapurple;
+//     cursor: pointer;
+//     text-transform: uppercase;
+//     font-weight: bold;
+//     padding: 15px 22px;
+//     color: $accentColor;   
+// }
 
-button:hover {
-    background: $accentColor;
-    color: $buttonColor;
-}
+// button:hover {
+//     background: $accentColor;
+//     color: $buttonColor;
+// }
 
 
 /* Typographic Styles */
@@ -121,23 +102,6 @@ h2 {
     font-size: 4rem;
 }
 
-// h3 {
-//     font-size: ;
-// }
-
-// h4 {
-//     font-size: ;
-// }
-
-// h5 {
-//     font-size: ;
-// }
-
-// h6 {
-//     font-size: ;
-// }
-
-
 /* Navigation accessibility */
 // .skip-link {
 //     position: absolute;
@@ -151,4 +115,52 @@ h2 {
 // .skip-link:focus {
 //     left: 0;
 // }
+
+//DROPDOWN MENU
+/* Dropdown Button */
+.dropbtn {
+    background-color: navy;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content li {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display:block;
+}
 
