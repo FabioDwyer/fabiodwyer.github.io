@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <ul>
+        <li onclick="soundtrackGenerator(true)" id="rock">Play Rock</li>
+        <li onclick="soundtrackGenerator(true)" id="latin">Play Latin</li>
+        <li onclick="soundtrackGenerator(true)" id="blues">Play Blues</li>
+    </ul>
+
+    <script>
+        const rock = document.createElement("SOURCE");
+            rock.setAttribute("src", "./assets/audioFiles/01rock.mp3");
+            rock.setAttribute("type", "audio/mpeg");
+            // if ($('li') === $('#rock')) {
+            playlist.appendChild(rock);
+            // }
+
+        const latin = document.createElement("SOURCE");
+            latin.setAttribute("src", "./assets/audioFiles/02latin.mp3");
+            latin.setAttribute("type", "audio/mpeg");
+            // if ($('li') === $('#latin')) {
+            playlist.appendChild(latin);
+            // }
+
+        const blues = document.createElement("SOURCE");
+            blues.setAttribute("src", "./assets/audioFiles/03duel.mp3");
+            blues.setAttribute("type", "audio/mpeg");
+            playlist.appendChild(blues);
+
+        function soundtrackGenerator(autoplay) {
+            const playlist = document.createElement("AUDIO");
+            playlist.setAttribute("id", "playlist");
+            playlist.setAttribute("controls", "controls");
+            
+            // Set the autoplay property:
+        playlist.autoplay = autoplay;
+                
+        document.body.appendChild(playlist); // When you paste, change .body to the name of the parent!!!
+        }
+
+    </script>
+</body>
+</html>

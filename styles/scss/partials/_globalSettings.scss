@@ -1,82 +1,74 @@
-// html {
-//     font-size: 62.5%;
-// }
+html {
+    font-size: 62.5%;
+}
 
-// body {
-//     font-size: 1.6rem;
-//     font-family: ;
-//     color: $main-font;
-//     background-color: ;
-//     line-height: ;
-// }
+body {
+    font-size: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    // color: $primaryFontColor;
+    background-color: white;
+    line-height: 1.6;
+}
 
-// .wrapper {
-//     max-width: 1240px;
-//     width: 85%;
-//     margin: 0 auto;
-// }
+.wrapper {
+    max-width: 1240px;
+    width: 85%;
+    margin: 0 auto;
+}
 
-// img {
-//     max-width: 100%;
-//     height: auto;
-//     display: block;
-// }
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
-// /* Stripping Styles */
-// body,
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6,
-// p,
-// ul,
-// li,
-// a,
-// button,
-// fieldset {
-// 	margin: 0;
-// 	padding: 0;
-// }
+/* Stripping Styles */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+a,
+button,
+fieldset {
+	margin: 0;
+	padding: 0;
+}
 
-// ul {
-// 	list-style: none;
-// }
+ul {
+	list-style: none;
+}
 
-// li {
-//     list-style: none;
-//     text-decoration: none;
-// } 
+li {
+    list-style: none;
+    text-decoration: none;
+} 
 
-// /*  a Link Styles */
-// a,
-// a:hover,
-// a:focus,
-// a:active,
-// a:visited {
-//     text-decoration: none;
-//     color: ;
-//     display: inline-block; 
-// }
+/*  a Link Styles */
+a,
+a:hover,
+a:focus,
+a:active,
+a:visited {
+    text-decoration: none;
+    color: $accentColor;
+    display: inline-block; 
+}
 
-// nav ul a,
 // button a {
-//     padding: ;
+//     padding: 20px 30px;
 // }
 
-// nav ul a:active,
-// button a:active {
-//     color: ;
-// }
-
-// nav ul a:hover,
-// nav ul a:focus,
 // button a:hover,
 // button a:focus {
-//     background-color: ;
-//     border-radius: ;
-//     position: relative;
+//     background-color: $secondaryFont;
+//     border-radius: 5px;
+//     // position: relative;
 //     transition: 1s;
 //     transform: scale(1.5);
 // }
@@ -98,37 +90,36 @@
 // }
 
 
-// /* Button Styles */
-// button {
-//     border: none;
-//     background: ;
-//     cursor: pointer;
-//     text-transform: uppercase;
-//     font-weight: bold;
-//     padding: 15px 22px;
-//     color: ;
-// }
+/* Button Styles */
+button {
+    border: none;
+    // background: $buttonColor;
+    background: rebeccapurple;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px 22px;
+    color: $accentColor;   
+}
 
-// button:hover {
-//     background: ;
-// }
-
-// form button {
-//     display: block;
-// }
+button:hover {
+    background: $accentColor;
+    color: $buttonColor;
+}
 
 
-// /* Typographic Styles */
-// h1 {
-//     font-family: ;
-//     font-weight: ;
-//     color: ;
-//     font-size: ;
-// }
+/* Typographic Styles */
+h1 {
+    // font-family: $logoFont;
+    // color: $secondaryFontColor;
+    font-size: 6rem;
+}
 
-// h2 {
-//     font-size: ;
-// }
+h2 {
+    // font-family: $mainFont;
+    // color: $secondaryFontColor;
+    font-size: 4rem;
+}
 
 // h3 {
 //     font-size: ;
@@ -146,24 +137,8 @@
 //     font-size: ;
 // }
 
-// h1, 
-// h2,
-// h3,
-// h4,
-// h5
-// button,
-// a {
-// }
 
-// h2,
-// h3,
-// h4,
-// h5,
-// button,
-// a {
-// }
-
-// /* Navigation accessibility */
+/* Navigation accessibility */
 // .skip-link {
 //     position: absolute;
 //     left: -1000px;

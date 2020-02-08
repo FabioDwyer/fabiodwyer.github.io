@@ -5,46 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fabio Dwyer's Soundboard</title>
+    <link href="https://fonts.googleapis.com/css?family=Mogra&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+    <div class="wrapper">
     <header>
         <div class="logo"></div>
-        <h1>Fabio Dwyer's Soundboard</h1>
+        <h1>Fabio Dwyer</h1>
+        <h2>Mood Soundtrack Generator:</h2>
     </header>
 
     <main>
-        <h2>Choose a mood below</h2>
-        <p>Turn your speakers on. Loud!</p>
-        
-        <button></button>
+        <h3>Instructions:</h3>
+            <ol>
+                <li>Turn your speakers on. Loud!</li>
+                <li>Just click the button below.</li>
+                <li>Choose an option that better describes your current mood and I'll give you a good soundtrack for your moment.</li>
+            </ol>
+        <!-- Button       
+        <button type="menu">Mood Soundtrack Generator</button>
+        <p>
+            <button onclick="myFunction(true)">I need a kick in the butt to start my day!</button>
+        </p> -->
         <!-- Dropdown Menu here -->
-
-        <ul>
-            <li><a href="#">💥 I need a kick in the butt to start my day! 💥</a></li>
-            <li><a href="#">❤ I'm in love, gimme some sexy latin sugar ❤</a></li>
-            <li><a href="#">😢 I feel lost in the desert. My horse left me. 😢</a></li>
-        </ul>
-
-        <!--
-        <ul>
-            <li>Picture 1 + audio file 1</li>
-            <li>Picture 2 + audio file 2</li>
-            <li>Picture 3 + audio file 3</li>
-        </ul>
+        <!-- Change mood titles:
+            1-I need a kick in the butt to start my day!
+            2-I'm in love, gimme some sexy latin sugar, baby!
+            3-I feel lost in the desert. My horse left me.
         -->
+
+        <ul>
+            <li onclick="songOne(true)" id="rock">Play Rock</li>
+            <li onclick="songTwo(true)" id="latin">Play Latin</li>
+            <li onclick="songThree(true)" id="blues">Play Blues</li>
+        </ul>        
     </main>
+    </div>
+    <!-- End of wrapper -->
+    <footer>
+        <p>All music written and performed by Fabio Dwyer</p>
+        <h6>&copy; Copyrights Reserved</h6>
+    </footer>
 
-
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
 
         // Document Ready
-        $(document).ready(function () {
-            // all jQuery code here    
+        $(document).ready(function() {
+        // Vanilla JavaScript:
+        
 
+        // all jQuery code here    
 
-            });
+        });
     </script>
 </body>
 </html>

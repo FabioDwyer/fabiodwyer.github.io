@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <ul>
+        <li onclick="songOne(true)" id="rock">Play Rock</li>
+        <li onclick="songTwo(true)" id="latin">Play Latin</li>
+        <li onclick="songThree(true)" id="blues">Play Blues</li>
+    </ul>
+
+    <script>
+        function songOne (autoplay) {
+            const playlist = document.createElement("AUDIO");
+            playlist.setAttribute("id", "rock");
+            playlist.setAttribute("controls", "controls");
+
+            const rock = document.createElement("SOURCE");
+            rock.setAttribute("src", "./assets/audioFiles/01rock.mp3");
+            rock.setAttribute("type", "audio/mpeg");
+            playlist.appendChild(rock);
+            
+
+            // Set the autoplay property:
+            playlist.autoplay = true;
+
+            document.body.appendChild(playlist);
+        }
+
+        // songTwo
+            function songTwo(autoplay) {
+                const playlist = document.createElement("AUDIO");
+                playlist.setAttribute("id", "latin");
+                playlist.setAttribute("controls", "controls");
+
+                const latin = document.createElement("SOURCE");
+                latin.setAttribute("src", "./assets/audioFiles/02latin.mp3");
+                latin.setAttribute("type", "audio/mpeg");
+                playlist.appendChild(latin);
+
+                // Set the autoplay property:
+                playlist.autoplay = true;
+
+                document.body.appendChild(playlist);
+            }
+
+        // songThree
+            function songThree(autoplay) {
+                const playlist = document.createElement("AUDIO");
+                playlist.setAttribute("id", "blues");
+                playlist.setAttribute("controls", "controls");
+
+                const blues = document.createElement("SOURCE");
+                blues.setAttribute("src", "./assets/audioFiles/03duel.mp3");
+                blues.setAttribute("type", "audio/mpeg");
+                playlist.appendChild(blues);
+
+                // Set the autoplay property:
+                playlist.autoplay = autoplay;
+
+                document.body.appendChild(playlist);
+            }
+        // End of songThree
+
+
+
+    </script>
+
+</body>
+
+</html>
