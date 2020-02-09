@@ -1,18 +1,34 @@
 header {
-    // display: flex;
-    // justify-content: space-between;
     border-bottom: 1px solid #000;
     text-align: center;
-    background: #233237; // Gunmetal
-    margin-bottom: 2%;
+    background: $primaryColor;
 }
-
-
 
 footer {
     text-align: center;
-    background: #984b43; // Rusty Red
-    color: #eac67a; // Warm Yellow
-    padding: 1.3% 0;
-    margin-top: 2%;
+    background: $secondaryColor;
+    color: $bgColor;
+    padding: 4px 0;
+    // warning: padding, even top/bottom are adding side scroll bars!!!
 }
+
+// footer .wrapper {
+    // display: flex;
+    // justify-content: center;
+// }
+
+// footer .text1 {
+    // width: calc(50% - 8%);
+    // width: 100%;
+    // margin: 2%;
+    // padding: 2%;
+// }
+
+// footer .bottomFooter {
+//     margin-top: 1px;
+//     // width: 100%;
+// }
+
+// footer h6 {
+//     padding: 2px;
+// }

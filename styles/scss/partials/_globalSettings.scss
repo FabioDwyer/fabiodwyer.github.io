@@ -4,9 +4,9 @@ html {
 
 body {
     font-size: 1.6rem;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #233237;;
-    background-color: #eac67a; // Warm Yellow
+    font-family: $mainFont;
+    color: $primaryColor;
+    background-color: $bgColor; 
     line-height: 1.6;
 }
 
@@ -32,6 +32,7 @@ h5,
 h6,
 p,
 ul,
+ol,
 li,
 a,
 button {
@@ -47,95 +48,38 @@ li {
     text-decoration: none;
 } 
 
-/*  a Link Styles */
-a,
-a:hover,
-a:focus,
-a:active,
-a:visited {
-    text-decoration: none;
-    color: $accentColor;
-    display: inline-block; 
-}
-
-button a {
-    padding: 20px 30px;
-}
-
-button a:hover,
-button a:focus {
-    // background-color: $secondaryFont;
-    border-radius: 5px;
-    transition: 1s;
-    transform: scale(1.5);
-}
-
-
-/* Button Styles */
-// button {
-//     border: none;
-//     // background: $buttonColor;
-//     background: rebeccapurple;
-//     cursor: pointer;
-//     text-transform: uppercase;
-//     font-weight: bold;
-//     padding: 15px 22px;
-//     color: $accentColor;   
-// }
-
-// button:hover {
-//     background: $accentColor;
-//     color: $buttonColor;
-// }
-
-
 /* Typographic Styles */
 h1 {
-    font-family: $logoPrimaryFont;
-    color: #984b43; // Rusty Red
+    font-family: $logoFont;
+    color: $secondaryColor;
     font-size: 8rem;
     line-height: 1.2;
 }
 
 h2 {
-    font-family: $logoSecondaryFont;
     font-size: 4rem;
-    color: #eac67a; // Warm Yellow
+    color: $bgColor;
     line-height: 1.2;
 }
 
 
-/* Navigation accessibility */
-// .skip-link {
-//     position: absolute;
-//     left: -1000px;
-//     top: 5px;
-//     z-index: 999;
-//     background: white;
-//     color: black;
-// }
-
-// .skip-link:focus {
-//     left: 0;
-// }
-
 //DROPDOWN MENU
 /* Dropdown Button */
 .dropbtn {
-    width: 50rem;
-    background: #233237; // Gunmetal
-    color: #eac67a; // Warm Yellow
-    padding: 16px;
-    font-family: $logoSecondaryFont;
+    width: 45vw;
+    background: $primaryColor;
+    color: $bgColor;
+    padding: 3% 5%;
+    margin-top: 3%;
+    font-family: $mainFont;
     font-size: 2.5vw;
     font-weight: bold;
     border: none;
-    // cursor: pointer;
 }
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-    background: #984b43; // Rusty Red
+    background: $secondaryColor;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -145,28 +89,28 @@ h2 {
 }
 
 /* Dropdown Content (Hidden by Default) */
-.dropdown-content {
+.dropdownContent {
     display: none;
     // position: absolute;
-    background-color: #eac67a; 
+    background-color: $bgColor; 
     min-width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
 /* Links inside the dropdown */
-.dropdown-content li {
-    color: #233237;;
+.dropdownContent li {
+    color: $primaryColor;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content li:hover {
+/* Change color of dropdown links on hover */ // Focus on Menu no working!!
+.dropdownContent li:hover,
+.dropdownContent li:focus {
     background-color: #ddd;
-    // cursor: pointer;
-
+    border: 1 solid $secondaryColor;
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */

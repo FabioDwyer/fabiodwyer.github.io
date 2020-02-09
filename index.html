@@ -8,7 +8,6 @@
     <title>Mood Soundtrack Generator</title>
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Mogra&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
@@ -32,7 +31,7 @@
             </ol>
             <div class="dropdown">
                 <button onclick="myFunction()" class="dropbtn">Soundtrack Generator</button>
-                <div id="myDropdown" class="dropdown-content">
+                <div id="myDropdown" class="dropdownContent">
                     <ul>
                         <li onclick="songOne(true)" id="rock">🚀 I'm starting my day, I need a kick in the butt!!</li>
                         <li onclick="songTwo(true)" id="latin">💘 I'm in love, gimme some sexy latin sugar, baby!</li>
@@ -43,8 +42,17 @@
         </main> <!-- End of wrapper -->
 
     <footer>
-        <p>All music written and performed by Fabio Dwyer</p>
-        <h6>&copy; Copyrights Reserved</h6>
+        <!-- <div class="wrapper">
+            <div class="text"> -->
+                <p>🎵 All music written and performed by Fabio Dwyer</p>
+            <!-- </div>
+            <div class="text"> -->
+                <p>💻 Page designed and developed by Fabio Dwyer</p>
+            <!-- </div>
+            <div class="bottomFooter"> -->
+                <h6>&copy; Copyrights Reserved</h6>
+            <!-- </div>
+        </div> -->
     </footer>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -63,7 +71,7 @@
         // Close the dropdown menu if the user clicks outside of it
         window.onclick = function (event) {
             if (!event.target.matches('.dropbtn')) {
-                let dropdowns = document.getElementsByClassName("dropdown-content");
+                let dropdowns = document.getElementsByClassName("dropdownContent");
                 let i;
                 for (i = 0; i < dropdowns.length; i++) {
                     let openDropdown = dropdowns[i];
