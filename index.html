@@ -30,7 +30,7 @@
             </li>
         </ol>
         <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">Soundtrack Generator</button>
+            <button class="dropbtn">Soundtrack Generator</button>
             <div id="myDropdown" class="dropdownContent">
                 <ul>
                     <li onclick="rockSong(true)" id="rock">🚀 I'm starting my day, I need a kick in the butt!!</li>
@@ -61,13 +61,11 @@
     <script>
         // $(document).ready(function() {
 
-        // Dropdown Menu:
-        /* When the user clicks on the button,
-        toggle between hiding and showing the dropdown content */
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
-
+        // Open Dropdown Menu:
+        $('.dropbtn').on('click', function() {
+            $('.dropdownContent').toggleClass('show');
+        });
+        
         // Close the dropdown menu if the user clicks outside of it
         window.onclick = function (event) {
             if (!event.target.matches('.dropbtn')) {
@@ -81,6 +79,7 @@
                 }
             }
         }
+
 
         // Audio JS:
         function rockSong(autoplay) {

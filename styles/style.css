@@ -403,6 +403,10 @@ ol {
   padding: 0 5%;
 }
 
+.show {
+  display: block;
+}
+
 /* Portrait tablet and small desktops */
 @media (max-width: 940px) {
   main.wrapper {
