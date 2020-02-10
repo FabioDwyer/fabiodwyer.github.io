@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>INDEX 2</title>
+    <title>INDEX 3</title>
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
@@ -43,19 +43,17 @@
             </div>
         </div> -->
 
-        <!-- New attempt -->
+        <!-- Alternatively -->
         <div class="dropdown">
             <button onclick="myFunction()" class="dropbtn">Soundtrack Generator</button>
             <div id="myDropdown" class="dropdownContent">
-                <ul class="audioPlayer" id="playlist">
-                    <li id="rock">🚀 I'm starting my day, I need a kick in the butt!!</li>
-                    <li id="latin">💘 I'm in love, gimme some sexy latin sugar, baby!</li>
-                    <li id="blues">😥 I feel like I'm lost in the desert. And my horse left
-                        me...</li>
+                <ul class="audioPlayer">
+                    <li class="playlist" id="rock">🚀</li>
+                    <li class="playlist" id="latin">💘</li>
+                    <li class="playlist" id="blues">😥</li>
                 </ul>
             </div>
         </div>
-
 
     </main> <!-- End of wrapper -->
 
@@ -105,47 +103,54 @@
         //     <source src="..." type="audio/mpeg">
         // </audio>
 
-    // New attempt:
-        /* html above:
-            <ul class="audioPlayer" id="playlist">
-                <li class="" id="rock">🚀</li>
-                <li class="" id="latin">💘</li>
-                <li class="" id="blues">😥</li>
-            </ul>
-        */
         
-            let rockSong = document.createElement('audio');
-            rockSong.id = 'rock';
-            rockSong.controls = 'controls';
-            rockSong.src = "./assets/audioFiles/01rock.mp3";
-            rockSong.type = "audio/mpeg";
-            document.getElementById('rock').appendChild(rockSong);
-            // rockSong.play or rockSong.autoplay
+        /* Alternatively: 
+        On html:
+        <ul class="audioPlayer">
+            <li class="playlist" id="rock">🚀</li>
+            <li class="playlist" id="latin">💘</li>
+            <li class="playlist" id="blues">😥</li>
+        </ul>
+        */
+        let song = document.createElement('audio');
+            song.controls = 'controls';
+            song.type = 'audio/mpeg';
+        document.getElementByClassName('playlist').appendChild(song); // What is this???
 
-            let latinSong = document.createElement('audio');
-            latinSong.id = 'latin';
-            latinSong.controls = 'controls';
-            latinSong.src = "./assets/audioFiles/02latin.mp3";
-            latinSong.type = "audio/mpeg";
-            document.getElementById('latin').appendChild(latinSong);
-            // latinSong.play or latinSong.autoplay
+        function userMood(rock, latin, blues) {
+            let rock = document.createElement('source');
+                song.setAttribute('src', './assets/audioFiles/01rock.mp3');
+                document.getElementById('rock'); 
 
-            let bluesSong = document.createElement('audio');
-            bluesSong.id = 'blues';
-            bluesSong.controls = 'controls';
-            bluesSong.src = "./assets/audioFiles/03blues.mp3";
-            bluesSong.type = "audio/mpeg";
-            document.getElementById('blues').appendChild(bluesSong);
-            // bluesSong.play or bluesSong.autoplay
+            let latin = document.createElement('source');
+                song.setAttribute('src', './assets/audioFiles/02latin.mp3');
+                document.getElementById('latin');
 
-            
+            let blues = document.createElement('source');
+                song.setAttribute('src', './assets/audioFiles/03duel.mp3');
+                document.getElementById('blues');
+
+            if (rock === true) {
+                    let userMood = rock;
+                    return song.autoplay;
+            } else if (rock !== true && latin === true) {
+                    let userMood = latin;
+                    return song.autoplay;
+            } else {
+                    let userMood = blues;
+                    return song.autoplay;
+            }
+        }
+        userMood();
+
+
 //////////////////////////////////////////////////////////////////////////////////
         // // Audio JS:
         // function soundtrack(autoplay) {
         //     const playlist = document.createElement("AUDIO");
         //     // playlist.setAttribute("id", "rock");
         //     playlist.setAttribute("controls", "controls");
-        
+
         //     const rock = document.createElement("SOURCE");
         //     rock.setAttribute("src", "./assets/audioFiles/01rock.mp3");
         //     rock.setAttribute("type", "audio/mpeg");
@@ -157,7 +162,7 @@
         //     playlist.appendChild(latin);
 
         //     const blues = document.createElement("SOURCE");
-        //     blues.setAttribute("src", "./assets/audioFiles/03blues.mp3");
+        //     blues.setAttribute("src", "./assets/audioFiles/03duel.mp3");
         //     blues.setAttribute("type", "audio/mpeg");
         //     playlist.appendChild(blues);
 
@@ -208,7 +213,7 @@
     //     playlist.setAttribute("controls", "controls");
 
     //     const blues = document.createElement("SOURCE");
-    //     blues.setAttribute("src", "./assets/audioFiles/03blues.mp3");
+    //     blues.setAttribute("src", "./assets/audioFiles/03duel.mp3");
     //     blues.setAttribute("type", "audio/mpeg");
     //     playlist.appendChild(blues);
 
@@ -223,4 +228,5 @@
     // }) // end of document ready that is not working!!
     </script>
 </body>
+
 </html>
