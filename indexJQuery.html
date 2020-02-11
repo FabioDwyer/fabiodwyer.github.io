@@ -33,13 +33,14 @@
             <button class="dropbtn">Soundtrack Generator</button>
             <div id="myDropdown" class="dropdownContent">
                 <ul>
-                    <li onclick="rockSong(true)" id="rock">🚀 I'm starting my day, I need a kick in the butt!!</li>
-                    <li onclick="latinSong(true)" id="latin">💘 I'm in love, gimme some sexy latin sugar, baby!</li>
-                    <li onclick="bluesSong(true)" id="blues">😥 I feel like I'm lost in the desert. And my horse left
+                    <li id="rock">🚀 I'm starting my day, I need a kick in the butt!!</li>
+                    <li id="latin">💘 I'm in love, gimme some sexy latin sugar, baby!</li>
+                    <li id="blues">😥 I feel like I'm lost in the desert. And my horse left
                         me...</li>
                 </ul>
             </div>
         </div>
+        <div id="playlistResult"></div>
     </main> <!-- End of wrapper -->
 
     <footer>
@@ -59,39 +60,63 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
     <script>
-        // $(document).ready(function() {
-        //      widgetApp.init();
+    $(document).ready(function() {
+        
 
         // Dropdown Menu:
         /* When the user clicks on the button,
         toggle between hiding and showing the dropdown content */
+            //Open the Dropdown Menu:
+
+        // Vanilla jScript:
         // function myFunction() {
         //     document.getElementById("myDropdown").classList.toggle("show");
         // }
         
-        // Close the dropdown menu if the user clicks outside of it
-        window.onclick = function (event) {
-            if (!event.target.matches('.dropbtn')) {
-                let dropdowns = document.getElementsByClassName("dropdownContent");
-                let i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    let openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
+        // jQuery for the jScript above
+        
+                
+        // Close the dropdown menu if the user clicks outside of it:
+        
+        // Vanilla JS:
+        // window.onclick = function (event) {
+        //     if (!event.target.matches('.dropbtn')) {
+        //         let dropdowns = $('.dropdownContent');
+        //         let i;
+        //         for (i = 0; i < dropdowns.length; i++) {
+        //             let openDropdown = dropdowns[i];
+        //             if (openDropdown.classList.contains('show')) {
+        //                 openDropdown.classList.remove('show');
+        //             }
+        //         }
+        //     }
+        // }
 
-            $('.dropbtn').on('click', function () {
-                $('.dropdownContent').toggleClass('show');
-            });
+        // jQuery for the jScript above:
+        $(window).on('click', function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                $('#myDropdown').removeClass('show');
+            } else {
+                event.preventDefault();
+                $('#myDropdown').toggleClass('show');
+            }
+        });
             
+        // How to empty the players that had been selected already : $('ul').empty(); Goes inside the function Look advanced-array-methods.html exercise on week4 > day 2
 
         // Audio JS:
+        // const playlist = document.createElement("AUDIO");
+        //     // playlist.setAttribute("id", "playlist");
+        //     playlist.setAttribute("controls", "controls");
+
+        // Below it almost works!! It needs a hard-refresh to clean the players :-(
+        // function player() {
+        //     $('body').append(playlist);
+        // } 
+
         function rockSong(autoplay) {
             const playlist = document.createElement("AUDIO");
-            // playlist.setAttribute("id", "playlist");
+            playlist.setAttribute("id", "playlist");
             playlist.setAttribute("controls", "controls");
 
             const rock = document.createElement("SOURCE");
@@ -101,14 +126,13 @@
 
             // Set the autoplay property:
             playlist.autoplay = autoplay;
-
-            document.body.appendChild(playlist);
+            $('#playlistResult').empty(); 
+            $('#playlistResult').append(playlist);
         }
 
         // songTwo
         function latinSong(autoplay) {
             const playlist = document.createElement("AUDIO");
-            // playlist.setAttribute("id", "latin");
             playlist.setAttribute("controls", "controls");
 
             const latin = document.createElement("SOURCE");
@@ -116,16 +140,16 @@
             latin.setAttribute("type", "audio/mpeg");
             playlist.appendChild(latin);
 
+            
             // Set the autoplay property:
             playlist.autoplay = autoplay;
-
-            document.body.appendChild(playlist);
+            $('#playlistResult').empty(); 
+            $('#playlistResult').append(playlist);
         }
 
         // songThree
         function bluesSong(autoplay) {
             const playlist = document.createElement("AUDIO");
-            // playlist.setAttribute("id", "blues");
             playlist.setAttribute("controls", "controls");
 
             const blues = document.createElement("SOURCE");
@@ -133,16 +157,27 @@
             blues.setAttribute("type", "audio/mpeg");
             playlist.appendChild(blues);
 
+            
             // Set the autoplay property:
             playlist.autoplay = autoplay;
-
-            document.body.appendChild(playlist);
+            $('#playlistResult').empty(); 
+            $('#playlistResult').append(playlist);
         }
         // End of songThree
 
-        // don't append to the body, append to main
+        $('#rock').on('click', function() {
+            rockSong(true);
+        });
 
-    // });
+        $('#latin').on('click', function() {
+            latinSong(true);
+        });
+
+        $('#blues').on('click', function() {
+            bluesSong(true);
+        });
+
+    });
     </script>
 </body>
 
