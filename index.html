@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>INDEX 2 - jQuery-Mood Soundtrack Generator</title>
+    <title>Mood Soundtrack Generator</title>
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
@@ -84,15 +84,15 @@
 
         // Below it almost works!! It needs a hard-refresh to clean the players :-(
         // function player() {
-        //     $('body').append(playlist);
+        //     $('#playlistResult').append(playlist);
         // } 
 
         function rockSong(autoplay) {
-            const playlist = document.createElement("AUDIO");
+            const playlist = document.createElement("audio");
             playlist.setAttribute("id", "playlist");
             playlist.setAttribute("controls", "controls");
 
-            const rock = document.createElement("SOURCE");
+            const rock = document.createElement("source");
             rock.setAttribute("src", "./assets/audioFiles/01rock.mp3");
             rock.setAttribute("type", "audio/mpeg");
             playlist.appendChild(rock);
@@ -105,10 +105,10 @@
 
         // songTwo
         function latinSong(autoplay) {
-            const playlist = document.createElement("AUDIO");
+            const playlist = document.createElement("audio");
             playlist.setAttribute("controls", "controls");
 
-            const latin = document.createElement("SOURCE");
+            const latin = document.createElement("source");
             latin.setAttribute("src", "./assets/audioFiles/02latin.mp3");
             latin.setAttribute("type", "audio/mpeg");
             playlist.appendChild(latin);
@@ -122,10 +122,10 @@
 
         // songThree
         function bluesSong(autoplay) {
-            const playlist = document.createElement("AUDIO");
+            const playlist = document.createElement("audio");
             playlist.setAttribute("controls", "controls");
 
-            const blues = document.createElement("SOURCE");
+            const blues = document.createElement("source");
             blues.setAttribute("src", "./assets/audioFiles/03blues.mp3");
             blues.setAttribute("type", "audio/mpeg");
             playlist.appendChild(blues);
@@ -140,10 +140,10 @@
 
         // songFour
         function boogieSong(autoplay) {
-            const playlist = document.createElement("AUDIO");
+            const playlist = document.createElement("audio");
             playlist.setAttribute("controls", "controls");
 
-            const boogie = document.createElement("SOURCE");
+            const boogie = document.createElement("source");
             boogie.setAttribute("src", "./assets/audioFiles/04boogie.mp3");
             boogie.setAttribute("type", "audio/mpeg");
             playlist.appendChild(boogie);
