@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>INDEX 2</title>
+    <title>INDEX 2 - jQuery-Mood Soundtrack Generator</title>
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
@@ -29,32 +29,20 @@
                 your moment.
             </li>
         </ol>
-
-        <!-- ORIGINAL JS CODE -->
-        <!-- <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">Soundtrack Generator</button>
+        <div class="dropdown">
+            <button class="dropbtn">Soundtrack Generator</button>
             <div id="myDropdown" class="dropdownContent">
                 <ul>
-                    <li onclick="rockSong(true)" id="rock">🚀 I'm starting my day, I need a kick in the butt!!</li>
-                    <li onclick="latinSong(true)" id="latin">💘 I'm in love, gimme some sexy latin sugar, baby!</li>
-                    <li onclick="bluesSong(true)" id="blues">😥 I feel like I'm lost in the desert. And my horse left me...</li>
-                </ul>
-            </div>
-        </div> -->
-        <!-- New attempt -->
-        <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">Soundtrack Generator</button>
-            <div id="myDropdown" class="dropdownContent">
-                <ul class="audioPlayer" id="playlist">
-                    <li onclick= "rockSong" id= "rock">🚀 I'm starting my day, I need a kick in the butt!!</li>
-                    <li onclick= "latinSong" id= "latin">💘 I'm in love, gimme some sexy latin sugar, baby!</li>
-                    <li onclick= "bluesSong" id="blues">😥 I feel like I'm lost in the desert. And my horse left
-                        me...</li>
+                    <li id="rock">I'm starting my day, I need a kick in the butt!!</li>
+                    <li id="latin">I'm in love, gimme some sexy latin sugar, baby!</li>
+                    <li id="blues">I feel like I'm lost in the desert. And my horse left me...</li>
+                    <li id="boogie">My day is done, let's party like it's 1947!</li>
                 </ul>
             </div>
         </div>
 
-
+        <div id="playlistResult"></div>
+        
     </main> <!-- End of wrapper -->
 
     <footer>
@@ -74,165 +62,119 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
     <script>
-        // $(document).ready(function(){
-        //      widgetApp.init();
+    $(document).ready(function() {
+        
 
         // Dropdown Menu:
-        /* When the user clicks on the button,
-        toggle between hiding and showing the dropdown content */
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
 
-        // Close the dropdown menu if the user clicks outside of it
-        window.onclick = function (event) {
-            if (!event.target.matches('.dropbtn')) {
-                let dropdowns = document.getElementsByClassName("dropdownContent");
-                let i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    let openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
+        $(window).on('click', function (event) {
+            event.preventDefault();
+            if (event.target.matches('.dropbtn')) {
+                $('#myDropdown').toggleClass('show'); // opens dropdown
+            } else {
+                $('#myDropdown').removeClass('show'); // closes dropdown
             }
-        }
-
-        // Audio on HTML: 
-        // <audio controls>
-        //     <source src="..." type="audio/mpeg">
-        // </audio>
-
-
-            let rockSong = document.createElement('audio');
-            rockSong.id = 'rock';
-            rockSong.controls = 'controls';
-            rockSong.src = "./assets/audioFiles/01rock.mp3";
-            rockSong.type = "audio/mpeg";
-            document.getElementById('rock').appendChild(rockSong);
-            // rockSong.play or 
-            // rockSong.autoplay
+        });
             
-                // $('li#rock').on('click', function () {
-                //     $('rockSong').play();
-                // });
 
-            let latinSong = document.createElement('audio');
-            latinSong.id = 'latin';
-            latinSong.controls = 'controls';
-            latinSong.src = "./assets/audioFiles/02latin.mp3";
-            latinSong.type = "audio/mpeg";
-            document.getElementById('latin').appendChild(latinSong);
-            // latinSong.play or
-            // latinSong.autoplay
-
-            let bluesSong = document.createElement('audio');
-            bluesSong.id = 'blues';
-            bluesSong.controls = 'controls';
-            bluesSong.src = "./assets/audioFiles/03blues.mp3";
-            bluesSong.type = "audio/mpeg";
-            document.getElementById('blues').appendChild(bluesSong);
-            // bluesSong.play or 
-            // bluesSong.autoplay
-        
-            function soundtrack() {
-                
-                if (document.getElementById('rock') === true) {
-                    return rockSong.autoplay;
-                } else if (document.getElementById('latin') === true) {
-                    return latinSong.autoplay;
-                }
-                else {
-                    return bluesSong.autoplay;
-                }
-            }
-            soundtrack();
-
-            
-            
-//////////////////////////////////////////////////////////////////////////////////
-        // // Audio JS:
-        // function soundtrack(autoplay) {
-        //     const playlist = document.createElement("AUDIO");
-        //     // playlist.setAttribute("id", "rock");
+        // Audio JS:
+        // const playlist = document.createElement("AUDIO");
+        //     // playlist.setAttribute("id", "playlist");
         //     playlist.setAttribute("controls", "controls");
+
+        // Below it almost works!! It needs a hard-refresh to clean the players :-(
+        // function player() {
+        //     $('body').append(playlist);
+        // } 
+
+        function rockSong(autoplay) {
+            const playlist = document.createElement("AUDIO");
+            playlist.setAttribute("id", "playlist");
+            playlist.setAttribute("controls", "controls");
+
+            const rock = document.createElement("SOURCE");
+            rock.setAttribute("src", "./assets/audioFiles/01rock.mp3");
+            rock.setAttribute("type", "audio/mpeg");
+            playlist.appendChild(rock);
+
+            // Set the autoplay property:
+            playlist.autoplay = autoplay;
+            $('#playlistResult').empty(); 
+            $('#playlistResult').append(playlist);
+        }
+
+        // songTwo
+        function latinSong(autoplay) {
+            const playlist = document.createElement("AUDIO");
+            playlist.setAttribute("controls", "controls");
+
+            const latin = document.createElement("SOURCE");
+            latin.setAttribute("src", "./assets/audioFiles/02latin.mp3");
+            latin.setAttribute("type", "audio/mpeg");
+            playlist.appendChild(latin);
+
+            
+            // Set the autoplay property:
+            playlist.autoplay = autoplay;
+            $('#playlistResult').empty(); 
+            $('#playlistResult').append(playlist);
+        }
+
+        // songThree
+        function bluesSong(autoplay) {
+            const playlist = document.createElement("AUDIO");
+            playlist.setAttribute("controls", "controls");
+
+            const blues = document.createElement("SOURCE");
+            blues.setAttribute("src", "./assets/audioFiles/03blues.mp3");
+            blues.setAttribute("type", "audio/mpeg");
+            playlist.appendChild(blues);
+
+            
+            // Set the autoplay property:
+            playlist.autoplay = autoplay;
+            $('#playlistResult').empty(); 
+            $('#playlistResult').append(playlist);
+        }
+        // End of songThree
+
+        // songFour
+        function boogieSong(autoplay) {
+            const playlist = document.createElement("AUDIO");
+            playlist.setAttribute("controls", "controls");
+
+            const boogie = document.createElement("SOURCE");
+            boogie.setAttribute("src", "./assets/audioFiles/04boogie.mp3");
+            boogie.setAttribute("type", "audio/mpeg");
+            playlist.appendChild(boogie);
+
+            
+            // Set the autoplay property:
+            playlist.autoplay = autoplay;
+            $('#playlistResult').empty(); 
+            $('#playlistResult').append(playlist);
+        }
+        // End of songFour
+
+        // Creating click event on each item of the menu:
+        $('#rock').on('click', function() {
+            rockSong(true);
+        });
+
+        $('#latin').on('click', function() {
+            latinSong(true);
+        });
+
+        $('#blues').on('click', function() {
+            bluesSong(true);
+        });
+
+        $('#boogie').on('click', function() {
+            boogieSong(true);
+        });
         
-        //     const rock = document.createElement("SOURCE");
-        //     rock.setAttribute("src", "./assets/audioFiles/01rock.mp3");
-        //     rock.setAttribute("type", "audio/mpeg");
-        //     playlist.appendChild(rock);
-
-        //     const latin = document.createElement("SOURCE");
-        //     latin.setAttribute("src", "./assets/audioFiles/02latin.mp3");
-        //     latin.setAttribute("type", "audio/mpeg");
-        //     playlist.appendChild(latin);
-
-        //     const blues = document.createElement("SOURCE");
-        //     blues.setAttribute("src", "./assets/audioFiles/03blues.mp3");
-        //     blues.setAttribute("type", "audio/mpeg");
-        //     playlist.appendChild(blues);
-
-        //     // Set the autoplay property:
-        //     playlist.autoplay = true;
-
-        //     document.body.appendChild(playlist);
-        // }
-
-    // Original Code working:
-
-    // Audio JS:
-    // function rockSong(autoplay) {
-    //     const playlist = document.createElement("AUDIO");
-    //     // playlist.setAttribute("id", "playlist");
-    //     playlist.setAttribute("controls", "controls");
-
-    //     const rock = document.createElement("SOURCE");
-    //     rock.setAttribute("src", "./assets/audioFiles/01rock.mp3");
-    //     rock.setAttribute("type", "audio/mpeg");
-    //     playlist.appendChild(rock);
-
-    //     // Set the autoplay property:
-    //     playlist.autoplay = true;
-
-    //     document.body.appendChild(playlist);
-    // }
-
-    // // songTwo
-    // function latinSong(autoplay) {
-    //     const playlist = document.createElement("AUDIO");
-    //     // playlist.setAttribute("id", "latin");
-    //     playlist.setAttribute("controls", "controls");
-
-    //     const latin = document.createElement("SOURCE");
-    //     latin.setAttribute("src", "./assets/audioFiles/02latin.mp3");
-    //     latin.setAttribute("type", "audio/mpeg");
-    //     playlist.appendChild(latin);
-
-    //     // Set the autoplay property:
-    //     playlist.autoplay = true;
-
-    //     document.body.appendChild(playlist);
-    // }
-
-    // // songThree
-    // function bluesSong(autoplay) {
-    //     const playlist = document.createElement("AUDIO");
-    //     // playlist.setAttribute("id", "blues");
-    //     playlist.setAttribute("controls", "controls");
-
-    //     const blues = document.createElement("SOURCE");
-    //     blues.setAttribute("src", "./assets/audioFiles/03blues.mp3");
-    //     blues.setAttribute("type", "audio/mpeg");
-    //     playlist.appendChild(blues);
-
-    //     // Set the autoplay property:
-    //     playlist.autoplay = autoplay;
-
-    //     document.body.appendChild(playlist);
-    // }
-    //     // End of songThree
-
-    // }); // end of document ready that is not working!!
+    }); // End of document ready
     </script>
 </body>
+
 </html>

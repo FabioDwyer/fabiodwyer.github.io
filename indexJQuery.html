@@ -64,45 +64,16 @@
         
 
         // Dropdown Menu:
-        /* When the user clicks on the button,
-        toggle between hiding and showing the dropdown content */
-            //Open the Dropdown Menu:
 
-        // Vanilla jScript:
-        // function myFunction() {
-        //     document.getElementById("myDropdown").classList.toggle("show");
-        // }
-        
-        // jQuery for the jScript above
-        
-                
-        // Close the dropdown menu if the user clicks outside of it:
-        
-        // Vanilla JS:
-        // window.onclick = function (event) {
-        //     if (!event.target.matches('.dropbtn')) {
-        //         let dropdowns = $('.dropdownContent');
-        //         let i;
-        //         for (i = 0; i < dropdowns.length; i++) {
-        //             let openDropdown = dropdowns[i];
-        //             if (openDropdown.classList.contains('show')) {
-        //                 openDropdown.classList.remove('show');
-        //             }
-        //         }
-        //     }
-        // }
-
-        // jQuery for the jScript above:
         $(window).on('click', function (event) {
-            if (!event.target.matches('.dropbtn')) {
-                $('#myDropdown').removeClass('show');
+            event.preventDefault();
+            if (event.target.matches('.dropbtn')) {
+                $('#myDropdown').toggleClass('show'); // opens dropdown
             } else {
-                event.preventDefault();
-                $('#myDropdown').toggleClass('show');
+                $('#myDropdown').removeClass('show'); // closes dropdown
             }
         });
             
-        // How to empty the players that had been selected already : $('ul').empty(); Goes inside the function Look advanced-array-methods.html exercise on week4 > day 2
 
         // Audio JS:
         // const playlist = document.createElement("AUDIO");

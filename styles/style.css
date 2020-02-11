@@ -403,6 +403,10 @@ ol {
   padding: 0 5%;
 }
 
+#playlistResult {
+  margin-top: 5%;
+}
+
 /* Portrait tablet and small desktops */
 @media (max-width: 940px) {
   main.wrapper {
