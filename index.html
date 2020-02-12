@@ -29,14 +29,16 @@
                 your moment.
             </li>
         </ol>
+        <!-- Note: I used tabindex=0 on the li's to make it more accessible without the mouse, since li's were not giving me :focus effect as buttons. I was instructed by Joey how to use it and that it should have been used sparingly and carefully, because it can create issues with certain browsers. Because of running out of time, I've opted for this. In the near future, I plan to return to this project and include buttons instead of li's, in order to take advantage of the accessibility default of the button element. I'm aware of the risk, but it seems to be working fine in my project. -->
+        
         <div class="dropdown">
             <button class="dropbtn">Soundtrack Generator</button>
             <div id="myDropdown" class="dropdownContent">
                 <ul>
-                    <li id="rock">I'm starting my day, I need a kick in the butt!!</li>
-                    <li id="latin">I'm in love, gimme some sexy latin sugar, baby!</li>
-                    <li id="blues">I feel like I'm lost in the desert. And my horse left me...</li>
-                    <li id="boogie">My day is done, let's party like it's 1947!</li>
+                    <li id="rock" tabindex="0">I'm starting my day, I need a kick in the butt!!</li>
+                    <li id="latin" tabindex="0">I'm in love, gimme some sexy latin sugar, baby!</li>
+                    <li id="blues" tabindex="0">I feel like I'm lost in the desert. And my horse left me...</li>
+                    <li id="boogie" tabindex="0">My day is done, let's party like it's 1949!</li>
                 </ul>
             </div>
         </div>
@@ -46,17 +48,16 @@
     </main> <!-- End of wrapper -->
 
     <footer>
-        <!-- <div class="wrapper">
-            <div class="text"> -->
-        <p>🎵 All music written and performed by Fabio Dwyer</p>
-        <!-- </div>
-            <div class="text"> -->
-        <p>💻 Page designed and developed by Fabio Dwyer</p>
-        <!-- </div>
-            <div class="bottomFooter"> -->
-        <h6>&copy; Copyrights Reserved</h6>
-        <!-- </div>
-        </div> -->
+
+        <div class="wrapper">
+
+            <p>🎵 All music written and performed by Fabio Dwyer</p>
+    
+            <p>💻 Page designed and developed by Fabio Dwyer</p>
+            
+            <h6>&copy; Copyrights Reserved</h6>
+        </div>
+        
     </footer>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -64,7 +65,6 @@
     <script>
     $(document).ready(function() {
         
-
         // Dropdown Menu:
 
         $(window).on('click', function (event) {
@@ -77,16 +77,8 @@
         });
             
 
-        // Audio JS:
-        // const playlist = document.createElement("AUDIO");
-        //     // playlist.setAttribute("id", "playlist");
-        //     playlist.setAttribute("controls", "controls");
-
-        // Below it almost works!! It needs a hard-refresh to clean the players :-(
-        // function player() {
-        //     $('#playlistResult').append(playlist);
-        // } 
-
+        // Audio:
+        // Song #1
         function rockSong(autoplay) {
             const playlist = document.createElement("audio");
             playlist.setAttribute("id", "playlist");
@@ -103,7 +95,7 @@
             $('#playlistResult').append(playlist);
         }
 
-        // songTwo
+        // Song #2
         function latinSong(autoplay) {
             const playlist = document.createElement("audio");
             playlist.setAttribute("controls", "controls");
@@ -113,14 +105,12 @@
             latin.setAttribute("type", "audio/mpeg");
             playlist.appendChild(latin);
 
-            
-            // Set the autoplay property:
             playlist.autoplay = autoplay;
             $('#playlistResult').empty(); 
             $('#playlistResult').append(playlist);
         }
 
-        // songThree
+        // Song #3
         function bluesSong(autoplay) {
             const playlist = document.createElement("audio");
             playlist.setAttribute("controls", "controls");
@@ -130,15 +120,12 @@
             blues.setAttribute("type", "audio/mpeg");
             playlist.appendChild(blues);
 
-            
-            // Set the autoplay property:
             playlist.autoplay = autoplay;
             $('#playlistResult').empty(); 
             $('#playlistResult').append(playlist);
         }
-        // End of songThree
 
-        // songFour
+        // Song #4
         function boogieSong(autoplay) {
             const playlist = document.createElement("audio");
             playlist.setAttribute("controls", "controls");
@@ -148,15 +135,12 @@
             boogie.setAttribute("type", "audio/mpeg");
             playlist.appendChild(boogie);
 
-            
-            // Set the autoplay property:
             playlist.autoplay = autoplay;
             $('#playlistResult').empty(); 
             $('#playlistResult').append(playlist);
         }
-        // End of songFour
 
-        // Creating click event on each item of the menu:
+        // Creates click event on each item of the menu:
         $('#rock').on('click', function() {
             rockSong(true);
         });
