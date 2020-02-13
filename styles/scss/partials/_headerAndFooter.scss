@@ -1,12 +1,15 @@
 header {
-    border-bottom: 1px solid #000;
-    text-align: center;
     background: $primaryColor;
 }
 
 footer {
-    text-align: center;
     background: $secondaryColor;
     color: $bgColor;
-    padding: 1% 0;
+    margin-bottom: -10%;
 }
+
+header,
+footer {
+    padding: 2% 0;
+}
+

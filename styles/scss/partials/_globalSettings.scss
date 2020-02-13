@@ -3,11 +3,12 @@ html {
 }
 
 body {
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-family: $mainFont;
     color: $primaryColor;
-    background-color: $bgColor; 
-    line-height: 1.6;
+    background-color: $bgColor;
+    text-align: center;
+    line-height: 1.8;
 }
 
 .wrapper {
@@ -52,14 +53,21 @@ li {
 h1 {
     font-family: $logoFont;
     color: $secondaryColor;
-    font-size: 8rem;
-    line-height: 1.2;
+    font-size: 12rem;
 }
 
 h2 {
-    font-size: 4rem;
+    font-size: 6rem;
     color: $bgColor;
+}
+
+h1,
+h2 {
     line-height: 1.2;
+}
+
+h3 {
+    font-size: 4rem;
 }
 
 
@@ -72,7 +80,7 @@ h2 {
     padding: 3% 5%;
     margin-top: 3%;
     font-family: $mainFont;
-    font-size: 2.5vw;
+    font-size: 3.5vw;
     font-weight: bold;
     border: none;
 }
@@ -83,14 +91,13 @@ h2 {
 
 .dropdown {
     width: 100%;
-    position: relative;
+    // position: relative;
     display: inline-block;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdownContent {
     display: none;
-    // position: absolute;
     background-color: $bgColor; 
     min-width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -120,4 +127,11 @@ button:focus {
 /* Show the dropdown menu */
 .show {
     display:block;
+}
+
+ol {
+    list-style-position: inside;
+    padding: 0 5%;
+    list-style-type: decimal;
+
 }

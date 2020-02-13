@@ -1,19 +1,18 @@
 main {
     background-color: #fff;
-    margin: 5% auto;
     padding: 2% 3%;
     text-align: center;
     min-height: 50vh;
 }
 
 main.wrapper {
-    width: 50%;
-    margin: 2.5% auto;
+    width: 65%;
+    margin: 8% auto;
 }
 
-ol {
-    padding: 0 5%;
-}
+// ol {
+//     padding: 0 5%;  // set on global
+// }
 
 #playlistResult {
     margin-top: 5%;
