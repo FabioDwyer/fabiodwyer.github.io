@@ -1,4 +1,0 @@
-node modules
-.psd
-DS_Store
-# files necessary for your project but you don't want on your git hub. Ignore file is always created by  naming it .gitignore
